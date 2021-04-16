@@ -8,6 +8,7 @@ public class KartController : MonoBehaviour
     public GameObject[] wheels;
     public float torque = 200;
     public float maxSteerAngle = 30;
+    public float maxBrakeTorque = 2000f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +20,18 @@ public class KartController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Go(vertical, horizontal);
+        float brake = Input.GetAxis("Jump");
+
+        Go(vertical, horizontal,brake);
 
 
     }
 
-    void Go(float accel, float steer)
+    void Go(float accel, float steer,float brake)
     {
         accel = Mathf.Clamp(accel, -1, 1);
         steer = Mathf.Clamp(steer, -1, 1) * maxSteerAngle;
+        brake = Mathf.Clamp(brake, 0, 1) * maxBrakeTorque;
         float thrustTorque = accel * torque;
         for (int i = 0; i < 4; i++)
         {
@@ -35,6 +39,8 @@ public class KartController : MonoBehaviour
 
             if (i < 2)
                 wheelColliders[i].steerAngle = steer;
+            else
+                wheelColliders[i].brakeTorque = brake;
 
             Quaternion quat;
             Vector3 position;
