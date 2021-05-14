@@ -4,18 +4,9 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
-    public GameObject[] waypoints;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject[] waypoints; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 
     private void OnDrawGizmos()
     {

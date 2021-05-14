@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KartController : MonoBehaviour
 {
@@ -30,7 +31,9 @@ public class KartController : MonoBehaviour
     float currentGearPerc;
     public float maxSpeed = 200;
 
-
+    public GameObject playerNamePrefab;
+    public Renderer kartMesh;
+    string[] aiNames = { "Buðra", "Okan", "Cem", "Esra","Murat","Ahmet","Mehmet" };
 
     void Start()
     {
@@ -39,6 +42,16 @@ public class KartController : MonoBehaviour
             skidSmoke[i] = Instantiate(smokePrefab);
             skidSmoke[i].Stop();
         }
+
+        GameObject playerName = Instantiate(playerNamePrefab);
+        playerName.GetComponent<NameUIController>().target = rb.gameObject.transform;
+
+        if (GetComponent<AIController>() != null)
+            playerName.GetComponent<Text>().text = aiNames[Random.Range(0, aiNames.Length)];
+        else
+            playerName.GetComponent<Text>().text = "Human";
+
+        playerName.GetComponent<NameUIController>().carRenderer = kartMesh;
     }
 
 
