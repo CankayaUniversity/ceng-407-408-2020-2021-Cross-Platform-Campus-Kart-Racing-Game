@@ -424,8 +424,8 @@ GameObject:
   - component: {fileID: 999748753}
   - component: {fileID: 999748754}
   - component: {fileID: 999748755}
-  - component: {fileID: 999748760}
   - component: {fileID: 3153662519620389418}
+  - component: {fileID: 6958647750931018212}
   m_Layer: 0
   m_Name: Kart
   m_TagString: Car
@@ -508,8 +508,10 @@ MonoBehaviour:
   highPitch: 6
   numGears: 5
   maxSpeed: 200
-  playerNamePrefab: {fileID: 0}
-  kartMesh: {fileID: 0}
+  playerNamePrefab: {fileID: 3831921888902709307, guid: feab0bbfe351df244a5aea50754f59c8,
+    type: 3}
+  kartMesh: {fileID: 2851434479354074728}
+  networkName: 
 --- !u!114 &5922809661273743547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,6 +524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330f60da9c6e58c4d9515d14bffd34f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlMode: 1
+  mobileUI: {fileID: 0}
 --- !u!114 &999748753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,29 +563,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5922809661273743540}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6957bc383aaf4a94b889a441735f433e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &999748760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5922809661273743540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57c697eaf63d5aa40b46f3879f9da296, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  distance: 8
-  height: 1.5
-  heightOffset: 1
-  heightDamping: 4
-  rotationDamping: 2
 --- !u!114 &3153662519620389418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +584,22 @@ MonoBehaviour:
   avoidTime: 0
   wonderDistance: 4
   avoidLength: 1
+--- !u!114 &6958647750931018212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5922809661273743540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54a421fe9dde3643a1091218b35f93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lap: 0
+  checkPoint: -1
+  timeEntered: 0
+  lastCP: {fileID: 0}
 --- !u!1 &6082135178219558119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,7 +1322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2168954631908076882
 Transform:
   m_ObjectHideFlags: 0
@@ -1459,10 +1461,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3603136183233627824, guid: d9177893f7dbee54a8d43f3458bf8675,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3e87c198f0be334b89f419e18f1b832, type: 2}
     - target: {fileID: 919132149155446097, guid: d9177893f7dbee54a8d43f3458bf8675,
         type: 3}
       propertyPath: m_Name
       value: biker
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9177893f7dbee54a8d43f3458bf8675,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9177893f7dbee54a8d43f3458bf8675, type: 3}

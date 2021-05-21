@@ -13,6 +13,7 @@ public class NameUIController : MonoBehaviour
     CheckpointManager cpManager;
 
     int carReg;
+    bool regoSet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,22 +22,34 @@ public class NameUIController : MonoBehaviour
         this.transform.SetParent(GameObject.Find("Canvas").GetComponent<Transform>(), false);
         playerName = GetComponent<Text>();
         canvasGroup = GetComponent<CanvasGroup>();
-        carReg = Leaderboard.RegisterCar(playerName.text);
+
+
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
+        if (!RaceStarter.raceStart)
+        {
+            canvasGroup.alpha = 0;
+            return;
+        }
+        if (!regoSet)
+        {
+            carReg = Leaderboard.RegisterCar(playerName.text);
+            regoSet = true;
+            return;
+        }
         if (carRenderer == null) return;
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
         bool carInView = GeometryUtility.TestPlanesAABB(planes, carRenderer.bounds);
         canvasGroup.alpha = carInView ? 1 : 0;
-        transform.position = Camera.main.WorldToScreenPoint(target.position+Vector3.up*1.2f);
+        transform.position = Camera.main.WorldToScreenPoint(target.position + Vector3.up * 1.2f);
 
         if (cpManager == null)
             cpManager = target.GetComponent<CheckpointManager>();
 
-        Leaderboard.SetPosition(carReg, cpManager.lap, cpManager.checkPoint,cpManager.timeEntered);
+        Leaderboard.SetPosition(carReg, cpManager.lap, cpManager.checkPoint, cpManager.timeEntered);
         string position = Leaderboard.GetPosition(carReg);
 
 

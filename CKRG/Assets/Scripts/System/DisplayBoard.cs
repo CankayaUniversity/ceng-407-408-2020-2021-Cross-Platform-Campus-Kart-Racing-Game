@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class DisplayBoard : MonoBehaviour
 {
-    public Text[] placesText;
+    public Text first;
+    public Text second;
+    public Text third;
+    public Text fourth;
 
     private void Start()
     {
@@ -14,9 +17,14 @@ public class DisplayBoard : MonoBehaviour
     private void LateUpdate()
     {
         List<string> places = Leaderboard.GetPlaces();
-        placesText[0].text = places[0];
-        placesText[1].text = places[1];
-        placesText[2].text = places[2];
-        placesText[3].text = places[3];
+
+        if (places.Count > 0)
+            first.text = places[0];
+        if (places.Count > 1)
+            second.text = places[1];
+        if (places.Count > 2)
+            third.text = places[2];
+        if (places.Count > 3)
+            fourth.text = places[3];
     }
 }

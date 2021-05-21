@@ -33,7 +33,8 @@ public class KartController : MonoBehaviour
 
     public GameObject playerNamePrefab;
     public Renderer kartMesh;
-    string[] aiNames = { "Buðra", "Okan", "Cem", "Esra","Murat","Ahmet","Mehmet" };
+    public string networkName = "";
+    string[] aiNames = { "Buðra", "Okan", "Cem", "Esra", "Murat", "Ahmet", "Mehmet","Veli"};
 
     void Start()
     {
@@ -47,9 +48,12 @@ public class KartController : MonoBehaviour
         playerName.GetComponent<NameUIController>().target = rb.gameObject.transform;
 
         if (GetComponent<AIController>() != null)
-            playerName.GetComponent<Text>().text = aiNames[Random.Range(0, aiNames.Length)];
+            if (networkName != "")
+                playerName.GetComponent<Text>().text = networkName;
+            else
+                playerName.GetComponent<Text>().text = aiNames[Random.Range(0, aiNames.Length)];
         else
-            playerName.GetComponent<Text>().text = "Human";
+            playerName.GetComponent<Text>().text = PlayerPrefs.GetString("PlayerName");
 
         playerName.GetComponent<NameUIController>().carRenderer = kartMesh;
     }

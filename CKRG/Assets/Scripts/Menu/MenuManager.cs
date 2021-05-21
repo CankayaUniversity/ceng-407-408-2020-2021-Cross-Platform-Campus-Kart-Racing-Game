@@ -22,12 +22,13 @@ public class MenuManager : MonoBehaviour
     public AudioMixer audioMixer;
     [Header("UI")]
     public Dropdown resDrop;
+    public InputField playerNameInputField;
 
     Resolution[] resolutions;
 
     private void Awake()
     {
-        if(PlayerPrefs.HasKey("SelectedColor"))
+        if (PlayerPrefs.HasKey("SelectedColor"))
         {
             selectedColor = PlayerPrefs.GetInt("SelectedColor");
             kartMaterial.mainTexture = bodyTextures[selectedColor];
@@ -54,7 +55,7 @@ public class MenuManager : MonoBehaviour
         else
         {
             selectedLogo = 0;
-            PlayerPrefs.SetInt("SelectedLogo",selectedLogo);
+            PlayerPrefs.SetInt("SelectedLogo", selectedLogo);
         }
     }
 
@@ -64,6 +65,14 @@ public class MenuManager : MonoBehaviour
         resolutions = Screen.resolutions;
         resDrop.ClearOptions();
 
+        if (PlayerPrefs.HasKey("PlayerName"))
+        {
+            playerNameInputField.text = PlayerPrefs.GetString("PlayerName");
+        }
+        else
+        {
+            playerNameInputField.text = "Player" + Random.Range(0, 1000);
+        }
         List<string> options = new List<string>();
         int currentResIndex = 0;
         for (int i = 0; i < resolutions.Length; i++)
@@ -80,11 +89,7 @@ public class MenuManager : MonoBehaviour
         resDrop.RefreshShownValue();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     public void ButtonClick(int index)
     {
@@ -92,6 +97,7 @@ public class MenuManager : MonoBehaviour
         {
             case 0:
                 SceneManager.LoadScene("SingleGame");
+                PlayerPrefs.SetString("PlayerName", playerNameInputField.text);
                 break;
             case 1:
                 SceneManager.LoadScene("MultiMenu");
@@ -104,9 +110,9 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void PartButtons(int index) 
+    public void PartButtons(int index)
     {
-        if(index == 10)
+        if (index == 10)
         {
             logoObj.SetActive(false);
             selectedLogo = index;
@@ -119,19 +125,19 @@ public class MenuManager : MonoBehaviour
             logoMaterial.mainTexture = logoTexture[selectedLogo];
             PlayerPrefs.SetInt("SelectedLogo", selectedLogo);
         }
-       
+
     }
 
     public void ColorButtons(int index)
     {
         kartMaterial.mainTexture = bodyTextures[index];
-        PlayerPrefs.SetInt("SelectedColor", index);        
+        PlayerPrefs.SetInt("SelectedColor", index);
     }
 
     #region Settings
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("music",volume);
+        audioMixer.SetFloat("music", volume);
     }
     public void SetQuality(int index)
     {

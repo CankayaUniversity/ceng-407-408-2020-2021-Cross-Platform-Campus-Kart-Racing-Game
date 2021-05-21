@@ -6,7 +6,7 @@ public class CheckpointManager : MonoBehaviour
 {
     public int lap = 0;
     public int checkPoint = -1;
-    public float timeEntered = 0;
+    public float timeEntered = 0.0f;
     int checkPointCount;
     int nextCheckPoint;
 

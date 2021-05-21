@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class SmoothFollow : MonoBehaviour
 {
     public Transform target;
+    public static Transform playerKart;
     public float distance = 8.0f;
     public float height = 1.5f;
     public float heightOffset = 1.0f;
@@ -23,8 +24,11 @@ public class SmoothFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (target == null)
+        if (target == null && playerKart !=null)
+        {
+            target = playerKart;
             return;
+        }
 
         if (FP == 1)
         {

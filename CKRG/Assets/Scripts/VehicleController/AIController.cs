@@ -26,6 +26,8 @@ public class AIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (waypoint == null)
+            waypoint = GameObject.FindGameObjectWithTag("Waypoint").GetComponent<Waypoint>();
         kc = GetComponent<KartController>();
         target = waypoint.waypoints[currentWP].transform.position;
         nextTarget = waypoint.waypoints[currentWP + 1].transform.position;
