@@ -44,7 +44,7 @@ public class MenuManager : MonoBehaviour
         if (PlayerPrefs.HasKey("SelectedLogo"))
         {
             selectedLogo = PlayerPrefs.GetInt("SelectedLogo");
-            if (selectedLogo == 0)
+            if (selectedLogo == 10)
                 logoObj.SetActive(false);
             else
             {
@@ -54,7 +54,7 @@ public class MenuManager : MonoBehaviour
         }
         else
         {
-            selectedLogo = 0;
+            selectedLogo = 10;
             PlayerPrefs.SetInt("SelectedLogo", selectedLogo);
         }
     }

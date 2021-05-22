@@ -26,6 +26,7 @@ public class RaceStarter : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        raceStart = false;
         foreach (GameObject item in countDownItems)
         {
             item.SetActive(false);
@@ -152,7 +153,7 @@ public class RaceStarter : MonoBehaviourPunCallbacks
 
     public void RestartGame()
     {
-        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().name);
+        PhotonNetwork.LoadLevel("SingleGame");
     }
 
     public void RestartLevel()
@@ -161,7 +162,7 @@ public class RaceStarter : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected)
             photonView.RPC("RestartGame", RpcTarget.All, null);
         else
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("SingleGame");
     }
 
     public void MenuButton()
