@@ -6,18 +6,26 @@ public enum ControlMode { Keyboard = 1, Touch = 2 };
 public class PlayerController : MonoBehaviour
 {
     KartController kc;
-   
-   // public GameObject mobileUI;
+    public ControlMode controlMode;    
     float lastTimeMoving = 0;
-    float horizontal;
-    float vertical;
-    float brake;
+    public float horizontal;
+    public float vertical;
+    public float brake;
     Vector3 lastPos;
     Quaternion lastRot;
     CheckpointManager checkpointManager;
+    public bool isMine;
 
     float finishSteer;
-
+    private void Awake()
+    {
+        isMine = true;
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+        controlMode = ControlMode.Keyboard;
+#else
+     controlMode = ControlMode.Touch;
+#endif
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +35,7 @@ public class PlayerController : MonoBehaviour
         lastPos = kc.rb.gameObject.transform.position;
         lastRot = kc.rb.gameObject.transform.rotation;
         finishSteer = Random.Range(-1.0f, 1.0f);
+        
     }
 
     void Update()
@@ -34,25 +43,20 @@ public class PlayerController : MonoBehaviour
         if (checkpointManager == null)
             checkpointManager = kc.rb.GetComponent<CheckpointManager>();
 
-       
+
         if (checkpointManager.lap == RaceStarter.totalLaps + 1)
         {
             kc.highAccSound.Stop();
             kc.Go(0, finishSteer, 0);
             return;
         }
-       
-       /* if (controlMode == ControlMode.Keyboard)
-        {
-            
-          //  mobileUI.SetActive(false);
-        }
-        else
-            // mobileUI.SetActive(true);*/
 
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        brake = Input.GetAxis("Jump");
+        if (controlMode == ControlMode.Keyboard)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+            brake = Input.GetAxis("Jump");            
+        }    
 
         if (kc.rb.velocity.magnitude > 1f || !RaceStarter.raceStart)
             lastTimeMoving = Time.time;
@@ -80,10 +84,13 @@ public class PlayerController : MonoBehaviour
 
 
         if (!RaceStarter.raceStart) vertical = 0;
-
-        kc.Go(vertical, horizontal, brake);
-        kc.CheckForSkid();
-        kc.CalculateEngineSound();
+        if(isMine)
+        {
+            kc.Go(vertical, horizontal, brake);
+            kc.CheckForSkid();
+            kc.CalculateEngineSound();
+        }
+       
     }
 
     void ResetLayer()
@@ -92,9 +99,4 @@ public class PlayerController : MonoBehaviour
         this.GetComponent<Ghost>().enabled = false;
     }
 
-    #region Mobie
-    public void AccelInput(float input) { vertical = input; }
-    public void SteerInput(float input) { horizontal = input; }
-    public void BrakeInput(float input) { brake = input; }
-    #endregion
 }

@@ -13,14 +13,20 @@ public class Networkplayer : MonoBehaviourPunCallbacks
     public Rigidbody rb;
     public Renderer kartMesh;
 
+
     private void Awake()
     {
-        if(photonView.IsMine)
+        if (photonView.IsMine)
         {
             LocalPlayerInstance = gameObject;
+            if (GetComponent<PlayerController>())
+                GetComponent<PlayerController>().isMine = true;
         }
         else
         {
+            if (GetComponent<PlayerController>())
+                GetComponent<PlayerController>().isMine = false;
+
             GameObject playerName = Instantiate(playerNamePrefab);
             playerName.GetComponent<NameUIController>().target = rb.gameObject.transform;
             string sentName = null;

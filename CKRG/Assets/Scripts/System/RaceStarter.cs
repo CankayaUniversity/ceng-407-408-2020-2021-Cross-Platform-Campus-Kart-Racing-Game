@@ -32,7 +32,7 @@ public class RaceStarter : MonoBehaviourPunCallbacks
             item.SetActive(false);
         }
         startButton.SetActive(false);
-        waitingText.SetActive(false);       
+        waitingText.SetActive(false);
         gameOverPanel.SetActive(false);
 
         int randomStartPos = Random.Range(0, spawnPos.Length);
@@ -49,6 +49,7 @@ public class RaceStarter : MonoBehaviourPunCallbacks
             if (Networkplayer.LocalPlayerInstance == null)
             {
                 pcar = PhotonNetwork.Instantiate(kartPrefabMulti.name, startPos, startRot, 0);
+                pcar.name = kartPrefabMulti.name + photonView.ViewID;
             }
             if (PhotonNetwork.IsMasterClient)
             {
@@ -76,7 +77,7 @@ public class RaceStarter : MonoBehaviourPunCallbacks
         SmoothFollow.playerKart = pcar.gameObject.GetComponent<KartController>().rb.transform;
         pcar.GetComponent<KartController>().enabled = true;
         pcar.GetComponent<PlayerController>().enabled = true;
-       
+
     }
 
     public void BeginGame()
@@ -110,7 +111,7 @@ public class RaceStarter : MonoBehaviourPunCallbacks
         StartCoroutine(PlayCountDown());
         startButton.SetActive(false);
         waitingText.SetActive(false);
-       
+
         GameObject[] cars = GameObject.FindGameObjectsWithTag("Car");
         carsCPM = new CheckpointManager[cars.Length];
         for (int i = 0; i < cars.Length; i++)
@@ -129,7 +130,7 @@ public class RaceStarter : MonoBehaviourPunCallbacks
             item.SetActive(false);
         }
         raceStart = true;
-       
+
     }
 
     private void LateUpdate()
@@ -166,6 +167,22 @@ public class RaceStarter : MonoBehaviourPunCallbacks
     }
 
     public void MenuButton()
+    {
+        if (PhotonNetwork.IsConnected)
+            PhotonNetwork.LeaveRoom();
+        else
+            SceneManager.LoadScene("Menu");
+
+
+
+    }
+
+    public override void OnLeftRoom()
+    {
+        PhotonNetwork.Disconnect();
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
     {
         SceneManager.LoadScene("Menu");
     }

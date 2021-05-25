@@ -1986,7 +1986,7 @@ GameObject:
   - component: {fileID: 1745910687803218022}
   m_Layer: 0
   m_Name: Kart_Photon
-  m_TagString: Car
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9138866166633710370}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a67337b49c9c61c4c825eb4370a1079f, type: 3}
   m_Name: 
@@ -2077,11 +2077,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9138866166633710370}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 330f60da9c6e58c4d9515d14bffd34f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlMode: 1
+  horizontal: 0
+  vertical: 0
+  brake: 0
+  isMine: 1
 --- !u!114 &3234088496665073415
 MonoBehaviour:
   m_ObjectHideFlags: 0
