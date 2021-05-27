@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3033999188791317729
 Transform:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 208193449865071446}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.85, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalScale: {x: 75, y: 75, z: 1}
   m_Children: []
   m_Father: {fileID: 6004934442874216468}
   m_RootOrder: 6
@@ -989,7 +989,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6349513228841056942}
   serializedVersion: 2
-  m_Mass: 1000
+  m_Mass: 1500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   - {fileID: 2423028162151982207}
   - {fileID: 9198832077331033002}
   - {fileID: 1991871571484982869}
-  torque: 200
+  torque: 100
   maxSteerAngle: 30
   maxBrakeTorque: 5000
   skidSound: {fileID: 8162736371868761855}
@@ -1034,6 +1034,7 @@ MonoBehaviour:
   highPitch: 6
   numGears: 5
   maxSpeed: 150
+  isBraking: 0
   playerNamePrefab: {fileID: 3831921888902709307, guid: feab0bbfe351df244a5aea50754f59c8,
     type: 3}
   kartMesh: {fileID: 3296168938114419826}
@@ -1051,9 +1052,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoint: {fileID: 0}
-  steeringSens: 0.05
-  brakeSens: 20
-  accelSens: 2
+  steeringSens: 0.025
+  brakeSens: 15
+  accelSens: 1
   lookAhead: 10
 --- !u!114 &8313666512520159583
 MonoBehaviour:

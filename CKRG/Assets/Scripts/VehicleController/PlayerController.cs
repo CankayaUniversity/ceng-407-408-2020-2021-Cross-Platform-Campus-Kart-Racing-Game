@@ -54,8 +54,9 @@ public class PlayerController : MonoBehaviour
         if (controlMode == ControlMode.Keyboard)
         {
             horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
-            brake = Input.GetAxis("Jump");            
+            vertical = Input.GetAxis("Vertical");           
+            brake = Input.GetAxis("Jump");
+         
         }    
 
         if (kc.rb.velocity.magnitude > 1f || !RaceStarter.raceStart)

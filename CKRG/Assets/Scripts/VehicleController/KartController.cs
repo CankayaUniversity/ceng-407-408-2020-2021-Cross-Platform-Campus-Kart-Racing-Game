@@ -9,7 +9,7 @@ public class KartController : MonoBehaviour
     public GameObject[] wheels;
     public float torque = 200;
     public float maxSteerAngle = 30;
-    public float maxBrakeTorque = 2000f;
+    public float maxBrakeTorque = 6000f;
 
     public AudioSource skidSound;
     public AudioSource highAccSound;
@@ -29,15 +29,16 @@ public class KartController : MonoBehaviour
     float rpm;
     int currentGear = 1;
     float currentGearPerc;
-    public float maxSpeed = 200;
+    public float maxSpeed = 200;  
 
     public GameObject playerNamePrefab;
     public Renderer kartMesh;
     public string networkName = "";
-    string[] aiNames = { "Buðra", "Okan", "Cem", "Esra", "Murat", "Ahmet", "Mehmet","Veli"};
+    string[] aiNames = { "Buðra", "Okan", "Cem", "Esra", "Murat", "Ahmet", "Mehmet", "Veli" };
 
     void Start()
     {
+
         for (int i = 0; i < wheels.Length; i++)
         {
             skidSmoke[i] = Instantiate(smokePrefab);
@@ -86,6 +87,8 @@ public class KartController : MonoBehaviour
         accel = Mathf.Clamp(accel, -1, 1);
         steer = Mathf.Clamp(steer, -1, 1) * maxSteerAngle;
         brake = Mathf.Clamp(brake, 0, 1) * maxBrakeTorque;
+
+
         float thrustTorque = 0;
 
         if (currentSpeed < maxSpeed)
@@ -93,19 +96,21 @@ public class KartController : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
+
             wheelColliders[i].motorTorque = thrustTorque;
+            wheelColliders[i].brakeTorque = brake;
 
             if (i < 2)
                 wheelColliders[i].steerAngle = steer;
-            else
-                wheelColliders[i].brakeTorque = brake;
+
+
 
             Quaternion quat;
             Vector3 position;
             wheelColliders[i].GetWorldPose(out position, out quat);
             wheels[i].transform.position = position;
             wheels[i].transform.rotation = quat;
-        }
+        }      
 
     }
 
