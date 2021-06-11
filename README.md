@@ -4,9 +4,9 @@
 CKRG is a cross-platform racing game with single player and multiplayer modes. The aim of the project is to provide a competitive racing experience among players. Players can join the game on mobile and computer. Also players can compete against artificial intelligence in single player mode or they can compete with other players in multiplayer mode if they wish.
 ***
 **Group Member:**
-* N. Cem ALTUNBULDUK - c1411004 @student.cankaya.edu.tr
-* Ozan ÇETİNER       - c1511012 @student.cankaya.edu.tr
-* Esra ŞAHİN         - c1511055 @student.cankaya.edu.tr
+* N. Cem ALTUNBULDUK - c1411004@student.cankaya.edu.tr
+* Ozan ÇETİNER       - c1511012@student.cankaya.edu.tr
+* Esra ŞAHİN         - c1511055@student.cankaya.edu.tr
 * Buğra DOĞAN        - c1711205@student.cankaya.edu.tr
 * ***
 * Advisor: Murat SARAN
