@@ -51,4 +51,4 @@ CKRG is a cross-platform racing game with single player and multiplayer modes. T
 </p>
 <h2> Demo Video </h2>
 
-[![CKRG DEMO](https://img.youtube.com/watch?v=tKb-Q1Z6RT8)](https://www.youtube.com/watch?v=tKb-Q1Z6RT8)
+[![CKRG DEMO](https://img.youtube.com/vi/tKb-Q1Z6RT8/0.jpg)](https://www.youtube.com/watch?v=tKb-Q1Z6RT8)
