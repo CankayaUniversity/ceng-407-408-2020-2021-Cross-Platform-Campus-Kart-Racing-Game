@@ -2,6 +2,7 @@
   <h1 align="center"> Cross-Platform Campus Kart Racing Game </h1> 
 
 CKRG is a cross-platform racing game with single player and multiplayer modes. The aim of the project is to provide a competitive racing experience among players. Players can join the game on mobile and computer. Also players can compete against artificial intelligence in single player mode or they can compete with other players in multiplayer mode if they wish.
+* [Demo Video](https://www.youtube.com/watch?v=tKb-Q1Z6RT8&ab_channel=CKRGCENG408)
 ***
 **Group Member:**
 * N. Cem ALTUNBULDUK - c1411004@student.cankaya.edu.tr
