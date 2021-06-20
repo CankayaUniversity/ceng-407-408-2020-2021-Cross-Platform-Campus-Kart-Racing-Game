@@ -24,6 +24,9 @@ public class RaceStarter : MonoBehaviourPunCallbacks
 
     public GameObject waitingText;
 
+    public GameObject Menu;
+
+
     private void Start()
     {
         raceStart = false;
@@ -169,11 +172,34 @@ public class RaceStarter : MonoBehaviourPunCallbacks
     public void MenuButton()
     {
         if (PhotonNetwork.IsConnected)
+            Menu.SetActive(true);
+        else
+        {
+            Menu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void ClickMainMenu()
+    {
+        if (PhotonNetwork.IsConnected)
             PhotonNetwork.LeaveRoom();
         else
+        {
             SceneManager.LoadScene("Menu");
+            Time.timeScale = 1;
+        }
+    }
 
-
+    public void Resume()
+    {
+        if (PhotonNetwork.IsConnected)
+            Menu.SetActive(false);
+        else
+        {
+            Menu.SetActive(false);
+            Time.timeScale = 1;
+        }      
 
     }
 

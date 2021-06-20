@@ -52,7 +52,7 @@ public class KartController : MonoBehaviour
             if (networkName != "")
                 playerName.GetComponent<Text>().text = networkName;
             else
-                playerName.GetComponent<Text>().text = aiNames[Random.Range(0, aiNames.Length)];
+                playerName.GetComponent<Text>().text = aiNames[Random.Range(0, aiNames.Length)] + " AI";
         else
             playerName.GetComponent<Text>().text = PlayerPrefs.GetString("PlayerName");
 

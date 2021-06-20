@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Skidmarks" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAMIAACAIghAgAAACYQAAAggQAAiQAAAAEAAAAgE=</HashCode>
+      <FileName>Assets\BetterWheelEffects\Skidmarks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WheelSkid" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAiAAAAgEAAAEIACBAAAAAAAAAAAAAEQAAUA=</HashCode>
+      <FileName>Assets\BetterWheelEffects\WheelSkid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppSettingsExtensions" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChannelSelector" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAgAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ChatAppIdCheckerUI" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatGui" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CGQBAFoQQCqDGEQAABCAAICUAEBggYIYCRAwTAAQAJA=</HashCode>
+      <FileName>Assets\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="NamePickGui" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAACAACAAAAAAAAAAAAAAAACAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuManager" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAACAAgIQABggCAACAABQCAhIAAAAQCAEA=</HashCode>
+      <FileName>Assets\Scripts\Menu\MenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSTManager" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAACAAAABAAQAAAAAAAAAAAACgAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Multiplayer\CSTManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Networkplayer" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAIAAAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Multiplayer\Networkplayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckpointManager" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAIACAAAAAAAQIAAAAAAAAAAAgAQAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\System\CheckpointManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisplayBoard" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAgEAIAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\System\DisplayBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ghost" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAEAAAAAAEAAAAIAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\System\Ghost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HUDController" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\System\HUDController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Leaderboard" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAFAAABAAAAgAAAAAAAgAAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\System\Leaderboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NameUIController" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAIAAACAAACAAIAEAIAAEAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\System\NameUIController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NumberCheckPoints" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\System\NumberCheckPoints.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RaceStarter" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAQAAIIgGAAAFIAhASAIQAgACgAAAAUAAAAgAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\System\RaceStarter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmoothFollow" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAUAIAAAIAAwAEIAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\System\SmoothFollow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Waypoint" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAIAAAEAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\System\Waypoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AIController" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAVwQCAAQCAAAAAAIFAACAAEAAKAAAAAAAAAABAAAAE=</HashCode>
+      <FileName>Assets\Scripts\VehicleController\AIController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AntiRoll" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiEAAAAMEAAAAAAAAAAAAEAQAgQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VehicleController\AntiRoll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AvoidDetector" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEQAAAAAAAIAAAAAAAAAAgAAAAAEAAAAACAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VehicleController\AvoidDetector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CST_Single" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAEAAAAACAAAABAAQAAAAAAAAAAAACgAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VehicleController\CST_Single.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FlipCar" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAEEAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VehicleController\FlipCar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KartController" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>okAEgIAAACQgAAQMAJAAAAAAEBgAABAABIAEEAEwICA=</HashCode>
+      <FileName>Assets\Scripts\VehicleController\KartController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerController" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAZQQGAAACAAAAAEAAAAAAAAAAICAAAAAEAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\VehicleController\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Photon.Chat.UtilityScripts.OnStartDelete" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="PlayerStats">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAIAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\System\Leaderboard.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="ControlMode">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\VehicleController\PlayerController.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
